@@ -1,11 +1,13 @@
 .app {
-  margin: 40px;
+  margin: 40px auto;
   margin-bottom: 10px;
   border: 1px solid #dadce0;
   padding: 20px;
+  width: 660px;
 }
 form {
   margin-bottom: 50px;
+  margin-top: 20px;
 }
 .degree {
   font-size: 48px;
