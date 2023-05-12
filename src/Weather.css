@@ -1,0 +1,81 @@
+.app {
+  margin: 40px;
+  margin-bottom: 10px;
+  border: 1px solid #dadce0;
+  padding: 20px;
+}
+form {
+  margin-bottom: 50px;
+}
+.degree {
+  font-size: 48px;
+  font-family: arial, sans-serif;
+  font-weight: 400;
+  color: #202124;
+  display: inline;
+}
+.img-fluid {
+  position: relative;
+  top: -10px;
+  height: 100%;
+}
+.unit {
+  color: #202124;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 28px;
+  margin-top: 10px;
+  padding-left: 6px;
+  vertical-align: top;
+}
+.description {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+
+  margin-left: 12px;
+}
+.zero {
+  display: inline-block;
+}
+.info {
+  position: relative;
+  top: 6px;
+}
+.search-form {
+  display: inline-block;
+  margin: 0 auto;
+  border: 1px solid #a7a7a9;
+  padding: 7px;
+  border-radius: 7px;
+}
+.right {
+  text-align: right;
+}
+.weather {
+  color: #202124;
+  font-size: 22px;
+
+  line-height: 26px;
+  font-weight: 400;
+}
+.date {
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
+}
+.more-info {
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
+}
+.container {
+  max-width: none;
+}
+.link {
+  text-align: center;
+  font-size: 10px;
+}
+.link a {
+  text-decoration: none;
+}
