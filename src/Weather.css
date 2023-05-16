@@ -1,8 +1,9 @@
 .app {
   margin: 40px auto;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   border: 1px solid #dadce0;
   padding: 20px;
+  padding-bottom: 40px;
   width: 660px;
   border-radius: 4px;
 }
