@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Weather.css";
 import axios from "axios";
-
+import FormmatedDate from "./FormmatedDate";
 export default function Weather(props) {
   const [load, setLoad] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -12,13 +12,12 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       city: response.data.name,
       impSrc: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    let newDate = new Date(response.data.dt * 1000);
-    console.log(newDate);
+    console.log(response);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -77,7 +76,9 @@ export default function Weather(props) {
               <div className="col-4 ">
                 <div className="right">
                   <div className="weather">Weather</div>
-                  <div className="date">Friday 05:00</div>
+                  <div className="date">
+                    <FormmatedDate date={load.date} />
+                  </div>
                   <div className="more-info">{load.description}</div>
                 </div>
               </div>
@@ -100,6 +101,16 @@ export default function Weather(props) {
     return (
       <div>
         <h4>Loading...</h4> {search()};
+        <div className="link text-muted">
+          Coded by Armita Mir,{" "}
+          <a
+            href="https://github.com/Armita2oo3/weather-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-Source Code
+          </a>
+        </div>
       </div>
     );
   }
