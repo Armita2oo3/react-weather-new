@@ -3,9 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Weather.css";
 import axios from "axios";
 import FormmatedDate from "./FormmatedDate";
+import WeatherTempereture from "./WeatherTempereture";
+import WeatherIcon from "./WeatherIcon";
 export default function Weather(props) {
   const [load, setLoad] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function showTemp(response) {
     setLoad({
       ready: true,
@@ -15,7 +18,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       city: response.data.name,
-      impSrc: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
     console.log(response);
   }
@@ -55,21 +58,17 @@ export default function Weather(props) {
           <div className="container mb-2">
             <div className="row">
               <div className="col-8">
-                <img
-                  src={load.impSrc}
-                  alt={load.description}
-                  className="img-fluid"
-                />
-                <div className="zero ms-3">
-                  <span className="degree">{Math.round(load.temperature)}</span>
-                  <span className="unit"> ℃</span>
-                </div>
+                <WeatherIcon icon={load.icon} />
+                <WeatherTempereture celcius={load.temperature} />
                 <div className="description text-muted ">
                   <div className="info">
                     Humidity: {Math.round(load.humidity)}%
                   </div>
                   <div className="info">
                     Wind Speed: {Math.round(load.wind)} km/h
+                  </div>
+                  <div className="info " id="description">
+                    {load.description}
                   </div>
                 </div>
               </div>
@@ -79,7 +78,6 @@ export default function Weather(props) {
                   <div className="date">
                     <FormmatedDate date={load.date} />
                   </div>
-                  <div className="more-info">{load.description}</div>
                 </div>
               </div>
             </div>

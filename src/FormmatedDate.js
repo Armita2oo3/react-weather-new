@@ -22,6 +22,8 @@ export default function FormmatedDate(props) {
   return (
     <div>
       {day} {hours}:{minutes}
+      <br />
+      (Iran Standard Time)
     </div>
   );
 }

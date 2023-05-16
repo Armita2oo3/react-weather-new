@@ -19,7 +19,7 @@ form {
 }
 .img-fluid {
   position: relative;
-  top: -10px;
+  top: 8px;
   height: 100%;
 }
 .unit {
@@ -43,7 +43,10 @@ form {
 }
 .info {
   position: relative;
-  top: -7px;
+  top: 6px;
+}
+#description {
+  text-transform: capitalize;
 }
 .search-form {
   display: inline-block;
