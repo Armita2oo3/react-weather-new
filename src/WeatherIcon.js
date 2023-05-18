@@ -20,7 +20,8 @@ export default function WeatherIcon(props) {
     "13d": "SNOW",
 
     "50d": "FOG",
-
+  };
+  const iconMapping2 = {
     "01n": "CLEAR_NIGHT",
     "02n": "PARTLY_CLOUDY_NIGHT",
 
@@ -38,19 +39,33 @@ export default function WeatherIcon(props) {
 
     "50n": "FOG",
   };
-
   const defaults = {
     size: 54,
     animate: true,
   };
-  return (
-    <span className="img-fluid">
-      <ReactAnimatedWeather
-        icon={iconMapping[props.icon]}
-        color={"black"}
-        size={defaults.size}
-        animate={defaults.animate}
-      />
-    </span>
-  );
+  let Icon = props.icon;
+  if (iconMapping2[Icon]) {
+    return (
+      <span className="img-fluid">
+        <ReactAnimatedWeather
+          icon={iconMapping2[Icon]}
+          color={"black"}
+          size={defaults.size}
+          animate={defaults.animate}
+        />
+      </span>
+    );
+  }
+  if (iconMapping[Icon]) {
+    return (
+      <span className="img-fluid">
+        <ReactAnimatedWeather
+          icon={iconMapping[Icon]}
+          color={"#ec6e4c"}
+          size={defaults.size}
+          animate={defaults.animate}
+        />
+      </span>
+    );
+  }
 }
