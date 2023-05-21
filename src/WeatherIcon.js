@@ -40,7 +40,7 @@ export default function WeatherIcon(props) {
     "50n": "FOG",
   };
   const defaults = {
-    size: 54,
+    size: 60,
     animate: true,
   };
   let Icon = props.icon;

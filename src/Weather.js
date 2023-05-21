@@ -4,6 +4,7 @@ import "./Weather.css";
 import axios from "axios";
 import FormmatedDate from "./FormmatedDate";
 import WeatherTempereture from "./WeatherTempereture";
+import WeatherForcast from "./WeatherForcast.js";
 import WeatherIcon from "./WeatherIcon";
 export default function Weather(props) {
   const [load, setLoad] = useState({ ready: false });
@@ -24,6 +25,7 @@ export default function Weather(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
+
     search();
   }
   function handleChange(event) {
@@ -81,6 +83,9 @@ export default function Weather(props) {
                 </div>
               </div>
             </div>
+          </div>
+          <div>
+            <WeatherForcast day={load} />
           </div>
         </div>
         <div className="link text-muted">
